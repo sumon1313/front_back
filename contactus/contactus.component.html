@@ -1,0 +1,65 @@
+<!-- Contact -->
+<app-header></app-header>
+<agm-map 
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="false">
+
+  <agm-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)">
+      
+    <agm-info-window>
+      <h6><strong>Sourabh Majumdar & Associates</strong></h6>
+      <strong>{{m.add1}}<br>
+      {{m.add2}}<br>
+      {{m.add3}}</strong>
+    </agm-info-window>
+    
+  </agm-marker>
+  </agm-map>
+  <div class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a></li>
+        <li><i class="fa fa-angle-right"></i></li>
+        <li>Contact Us</li>
+    </ul>
+    </div>
+</div>
+<div class="container">
+  <h2 class="section-heading mb-30">Contact Us</h2><br>
+    <div class="row">
+        <div class="col-sm-6 text-center">
+            <h5><strong><u>Branch Offices:</u></strong></h5><br>
+            <h6><strong><u>Burdwan / Purba Burdwan / Durgapur</u></strong></h6>
+            <p>Room No. 5, Sen Market, 68, G.T. Road, Badamtala, <br>Opp. City Tower, Ground Floor, Burdwan – 713101, West Bengal</p>
+            <br>
+            <h6><strong><u>Hooghly</u></strong></h6>
+            <p>47/2/1 Chatterjee Para Lane, Baidyabati, <br>Hooghly – 712222, West Bengal</p>
+        </div>
+        <div class="col-sm-6 text-center">
+          <h5><strong><u>Registered Office:</u></strong></h5>
+          <p>17C, Lake Road Kavi Bharati Sarani, <br>Opp. – Charu Chandra College,<br>
+            Kolkata – 700029, West Bengal</p>
+            <br>
+            <div class="text-center">
+              <h5><strong><u>Contact Details:</u></strong></h5>
+              <h6><strong><u>Contact No.</u></strong></h6>
+              <p><i class="fa fa-phone"></i> +91 98304 03662, +91 98306 90568, +91 92316 13118<br> 033 4065 5309 </p>
+              <h6><strong><u>Email ID:</u></strong></h6>
+              <p>casourabh70@gmail.com, pratimghosh2011@gmail.com<br>ujjalg25@gmail.com</p>
+            </div>
+      </div>
+    </div>  
+   
+</div>
+<br>
+<app-footer></app-footer>
